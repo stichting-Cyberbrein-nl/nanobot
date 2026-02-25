@@ -3,7 +3,7 @@ x-common-config: &common-config
     context: .
     dockerfile: Dockerfile
   volumes:
-    - ~/.nanobot:/root/.nanobot
+    - nanobot-data:/root/.nanobot
 
 services:
   nanobot-gateway:
@@ -29,3 +29,6 @@ services:
     command: ["status"]
     stdin_open: true
     tty: true
+
+volumes:
+  nanobot-data:
